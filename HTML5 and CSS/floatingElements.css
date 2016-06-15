@@ -1,0 +1,22 @@
+div {
+    width: 120px;
+    height: 25px;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 0 10px;
+    background: rgb(100, 149, 237);
+    text-align: center;
+    text-shadow: 0 0 5px white;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.center {
+    margin: 0 auto;
+}
