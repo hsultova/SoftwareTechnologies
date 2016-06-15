@@ -18,6 +18,7 @@ time, mark, audio, video {
     padding: 0;
     border: 0;
     font-size: 100%;
+    font: inherit;
     vertical-align: baseline;
 }
 
@@ -43,6 +44,7 @@ blockquote, q {
 
 blockquote:before, blockquote:after,
 q:before, q:after {
+    content: '';
     content: none;
 }
 
@@ -61,7 +63,7 @@ table {
 }
 
 hr {
-    color: rgb(255, 255, 255);
+    color: rgba(255, 255, 255, 0.5);
     margin: 15px auto;
     border: none;
     border-bottom: 1px solid white;
@@ -184,8 +186,7 @@ a {
 .content {
     padding-top: 2.5%;
     font: 16px Lato;
-    font-weight: 500;
-    width: 80%;
+    font-weight: 80%;
     margin-left: 3%;
     word-break: normal;
 }
