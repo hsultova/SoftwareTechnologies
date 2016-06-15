@@ -13,20 +13,16 @@ p {
     background: rgb(245, 245, 245);
 }
 
-.about {
+aside {
     width: 90px;
     height: 100px;
     padding: 10px;
-    margin-top: -2px;
     background: rgb(245, 245, 220);
     list-style-type: none;
-}
-
-.about {
     float: left;
 }
 
-.about li a {
+aside a {
     display: block;
     height: 30px;
     color: rgb(181, 61, 54);
@@ -34,7 +30,7 @@ p {
     text-align: center;
 }
 
-.about li a:hover {
+aside a:hover {
     margin: 4px;
     background: rgb(222, 184, 135);
     border-radius: 5px;
