@@ -1,4 +1,14 @@
+body {
+    font-family: Arial;
+}
+
+h1{
+    background: rgb(245, 245, 220);
+    text-align: center;
+}
 form {
+    margin-left: 40%;
+    margin-right:25%;
     background: #EEEEEE;
     display: inline-block;
 }
