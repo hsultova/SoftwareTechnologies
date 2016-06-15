@@ -1,0 +1,41 @@
+body {
+    font-family: Arial;
+}
+
+h2 {
+    background: rgb(245, 245, 220);
+    text-align: center;
+}
+
+p {
+    padding: 10px;
+    margin: 0 0 0 120px;
+    background: rgb(245, 245, 245);
+}
+
+.about {
+    width: 90px;
+    height: 100px;
+    padding: 10px;
+    margin-top: -2px;
+    background: rgb(245, 245, 220);
+    list-style-type: none;
+}
+
+.about {
+    float: left;
+}
+
+.about li a {
+    display: block;
+    height: 30px;
+    color: rgb(181, 61, 54);
+    text-decoration: none;
+    text-align: center;
+}
+
+.about li a:hover {
+    margin: 4px;
+    background: rgb(222, 184, 135);
+    border-radius: 5px;
+}
