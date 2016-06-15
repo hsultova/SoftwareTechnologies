@@ -2,21 +2,27 @@ body {
     font-family: Arial;
 }
 
-h2 {
+header, footer, aside, main {
     background: rgb(245, 245, 220);
+    margin: 10px;
+    padding: 5px;
     text-align: center;
 }
 
-p {
+header{
+    font-size: 16pt;
+    font-weight: bold;
+}
+
+main {
     padding: 10px;
     margin: 0 0 0 120px;
     background: rgb(245, 245, 245);
+    text-align: left;
 }
 
 aside {
     width: 90px;
-    height: 100px;
-    padding: 10px;
     background: rgb(245, 245, 220);
     list-style-type: none;
     float: left;
@@ -24,14 +30,20 @@ aside {
 
 aside a {
     display: block;
+    margin: 5px;
+    padding: 5px;
     height: 30px;
     color: rgb(181, 61, 54);
     text-decoration: none;
-    text-align: center;
+    text-align: left;
+}
+
+footer{
+    clear: both;
+    font-size: 11pt;
 }
 
 aside a:hover {
-    margin: 4px;
     background: rgb(222, 184, 135);
     border-radius: 5px;
 }
