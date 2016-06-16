@@ -1,0 +1,72 @@
+@import url("https://www.google.com/fonts#UsePlace:use/Collection:Vollkornhttps://www.google.com/fonts#UsePlace:use/Collection:Vollkorn");
+
+main {
+    color: rgb(136, 150, 162);
+    font-family: Vollkorn serif;
+    text-align: center;
+}
+
+.title {
+    font-size: 40px;
+}
+
+hr {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    border: 1px solid rgb(235, 239, 242);
+}
+
+.type-of-business-title {
+    display: block;
+    padding: 30px;
+    background-color: rgb(235, 239, 242);
+    font-size: 30px;
+}
+
+.price {
+    padding: 10px;
+    font-size: 60px;
+    font-family: Vollkorn serif;
+}
+
+.purchase {
+    display: block;
+    box-shadow: none;
+    width: 250px;
+    height: 60px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 20px;
+    left: 25px;
+    background-color: rgb(202, 213, 217);
+    color: white;
+    font-size: 18px;
+}
+
+.type-of-business {
+    display: block;
+    float: left;
+    position: relative;
+    width: 300px;
+    height: 600px;
+    margin: 3% 6% auto 6%;
+    background-color: rgb(246, 247, 249);
+
+}
+
+.type-of-business .type-content {
+    padding: 10px;
+    font-size: 16px;
+    font-family: Tahoma;
+}
+
+.type-of-business-title:hover, .purchase:hover {
+    background-color: rgb(101, 211, 226);
+    color: white;
+    cursor: pointer;
+}
+
+.price:hover {
+    color: rgb(101, 211, 226);
+    cursor: pointer;
+}
