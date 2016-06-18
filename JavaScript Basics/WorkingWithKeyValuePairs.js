@@ -7,7 +7,6 @@ function solve(input) {
 		let tokens = input[i].split(' ');
 		let key = tokens[0];
 		let value = tokens[1];
-
 		pairs[key] = value;
 	}
 	let result = pairs[input[input.length - 1]];
@@ -19,4 +18,4 @@ function solve(input) {
 	}
 }
 
-solve(['key value', 'key eulav', 'test tset', 'a']);
+solve(['key value', 'key eulav', 'test tset', 'key']);
