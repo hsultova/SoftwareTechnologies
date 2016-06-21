@@ -1,0 +1,132 @@
+@import url("http://fonts.googleapis.com/css?family=Ubuntu:300,400,700 ");
+@import url('http://fonts/MyriadPro-Regular.ttf');
+
+.wrapper {
+	font-family: "Ubuntu";
+}
+
+hr {
+	color: rgb(80, 187, 210);
+}
+
+#sidebar {
+	color: white;
+	font-size: 13px;
+	width: 100%;
+}
+
+#sidebar #slogan {
+	margin-left: 10%;
+	margin-right: 40%;
+	font-size: 16px;
+}
+
+#sidebar .single-menu-element-link {
+	padding: 8px;
+	display: inline-block;
+	text-decoration: none;
+	color: white;
+}
+
+header {
+	width: 100%;
+}
+
+.title {
+	margin-bottom: 0;
+	color: rgb(93, 239, 255);
+	letter-spacing: 20px;
+	font-size: 60px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.subtitle {
+	margin-top: 0;
+	font-size: 16px;
+	letter-spacing: 5px;
+	text-align: center;
+}
+
+.content {
+	font-size: 32px;
+	text-align: center;
+	font-weight: lighter;
+}
+
+#get-started-button-layer {
+	text-align: center;
+	margin: auto;
+}
+
+#get-started-button {
+	padding: 10px;
+	width: 200px;
+	color: white;
+	background-color: Transparent;
+	border: white;
+	outline: solid;
+	font-size: 24px;
+}
+
+.something-to-say {
+	padding-top: 50px;
+	padding-bottom: 25px;
+	text-align: center;
+}
+
+.something-to-say a {
+	color: white;
+	border-style: solid;
+	border-width: 0 0 1px 0;
+	padding: 5px;
+	letter-spacing: 3px;
+	text-decoration: none;
+	font-size: 16px;
+	font-family: 'Myriad Pro';
+}
+
+ul .sections .single-section{
+	display: inline-block;
+}
+
+.title-content{
+	font-size: 28px;
+}
+.single-section-title{
+	font-size: 20px;
+}
+.single-section-content{
+	font-size: 13px;
+	font-family: 'Myriad Pro';
+}
+
+#many-options-icon{
+
+}
+
+footer{
+	font-size: 12px;
+	font-family: 'Myriad Pro';
+}
+#sidebar, header {
+	display: table;
+	color: white;
+	background: -moz-linear-gradient(45deg, rgba(81, 97, 148, 1) 0%, rgba(79, 143, 170, 1) 55%, rgba(76, 158, 154, 1) 94%, rgba(76, 158, 154, 1) 95%, rgba(76, 158, 154, 1) 99%, rgba(76, 158, 154, 1) 100%); /* ff3.6+ */
+	background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, rgba(81, 97, 148, 1)), color-stop(55%, rgba(79, 143, 170, 1)), color-stop(94%, rgba(76, 158, 154, 1)), color-stop(95%, rgba(76, 158, 154, 1)), color-stop(99%, rgba(76, 158, 154, 1)), color-stop(100%, rgba(76, 158, 154, 1))); /* safari4+,chrome */
+	background: -webkit-linear-gradient(45deg, rgba(81, 97, 148, 1) 0%, rgba(79, 143, 170, 1) 55%, rgba(76, 158, 154, 1) 94%, rgba(76, 158, 154, 1) 95%, rgba(76, 158, 154, 1) 99%, rgba(76, 158, 154, 1) 100%); /* safari5.1+,chrome10+ */
+	background: -o-linear-gradient(45deg, rgba(81, 97, 148, 1) 0%, rgba(79, 143, 170, 1) 55%, rgba(76, 158, 154, 1) 94%, rgba(76, 158, 154, 1) 95%, rgba(76, 158, 154, 1) 99%, rgba(76, 158, 154, 1) 100%); /* opera 11.10+ */
+	background: -ms-linear-gradient(45deg, rgba(81, 97, 148, 1) 0%, rgba(79, 143, 170, 1) 55%, rgba(76, 158, 154, 1) 94%, rgba(76, 158, 154, 1) 95%, rgba(76, 158, 154, 1) 99%, rgba(76, 158, 154, 1) 100%); /* ie10+ */
+	background: linear-gradient(45deg, rgba(81, 97, 148, 1) 0%, rgba(79, 143, 170, 1) 55%, rgba(76, 158, 154, 1) 94%, rgba(76, 158, 154, 1) 95%, rgba(76, 158, 154, 1) 99%, rgba(76, 158, 154, 1) 100%); /* w3c */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#4C9E9A', endColorstr='#516194', GradientType=1);
+}
+
+#sidebar .single-menu-element-link:hover {
+	color: rgb(80, 187, 210);
+}
+
+.something-to-say a:hover {
+	color: rgb(80, 187, 210);
+	border-color: rgb(80, 187, 210);
+}
+
