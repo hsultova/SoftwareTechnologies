@@ -1,0 +1,114 @@
+body {
+    font-family: Arial;
+    background: url("../images/colorful_dots_on_black.jpg") no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.page-title {
+    background-color: green;
+    color: yellow;
+    font-size: 24pt;
+    font-weight: 600;
+    text-align: center;
+}
+
+.future-articles-title {
+    background-color: ghostwhite;
+    color: black;
+    text-decoration: underline;
+    font-size: 14pt;
+    font-weight: 100;
+    text-align: center;
+    margin-left: -10%;
+}
+
+.future-articles {
+    background-color: ghostwhite;
+    width: 170px;
+    height: 200px;
+    display: block;
+    float: left;
+    border-radius: 20px;
+    margin-top: 5%;
+    padding: 2%;
+
+}
+
+ul li {
+    height: 30px;
+    margin-left: -20%;
+
+}
+
+article {
+    background-color: ghostwhite;
+    display: block;
+    border-radius: 20px;
+    margin-top: 5%;
+    padding: 5%;
+}
+
+section {
+    float: right;
+    width: 70%;
+    height: 100%;
+    margin-right: 50px;
+    padding-top: 5%;
+}
+
+#webColors {
+    display: block;
+    padding: 2%;
+    border-radius: 10px;
+    background-color: red;
+    color: white;
+    font-size: 16pt;
+}
+
+#webSafeColors {
+    display: block;
+    padding: 2%;
+    border-radius: 10px;
+    background-color: orange;
+    color: black;
+    font-size: 16pt;
+}
+
+#RGB {
+    display: block;
+    padding: 2%;
+    border-radius: 10px;
+    background-color: yellow;
+    color: black;
+    font-size: 16pt;
+}
+
+#RGBA {
+    display: block;
+    padding: 2%;
+    border-radius: 10px;
+    background-color: green;
+    color: white;
+    font-size: 16pt;
+}
+
+#HSLHSV {
+    display: block;
+    padding: 2%;
+    border-radius: 10px;
+    background-color: blue;
+    color: white;
+    font-size: 16pt;
+}
+
+#lorem {
+    display: block;
+    padding: 2%;
+    border-radius: 10px;
+    background-color: purple;
+    color: white;
+    font-size: 16pt;
+}
