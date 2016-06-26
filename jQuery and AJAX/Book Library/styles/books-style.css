@@ -8,42 +8,71 @@
 	text-align: center;
 }
 
+#loadingBox {
+	background-color: cornflowerblue;
+}
+
+#infoBox {
+	background-color: lightgreen;
+}
+
+#errorBox {
+	background-color: indianred;
+}
+
 main {
 	margin: 0 auto;
 }
 
-ul {
-	list-style-type: none;
-}
-
-#sidebar {
-	width: 100%;
-	height: 5%;
+#menu {
 	background-color: #DDDDDD;
 	border-radius: 20px;
-	font-size: 32px;
+	padding: 5px;
+	font-size: 24px;
 	text-align: center;
 }
 
-#sidebar .single-menu-element-link {
-	display: inline-block;
+#menu .single-menu-element-link {
+	display: none;
 	text-decoration: none;
 	color: darkblue;
 	font-weight: 600;
-	margin-left: 10%;
-	margin-right: 10%;
+	padding: 5px 10px;
+	border-radius: 5px;
+	margin-left: 2%;
+	margin-right: 2%;
+}
+
+#menu .single-menu-element-link:hover {
+	background-color: lightsteelblue;
 }
 
 .single-menu-element {
 	padding-top: 20px;
 }
 
-footer {
-	display: block;
-	position: fixed;
-	bottom: 0;
+main > section {
+	display: none;
+	padding: 20px 5px;
+}
+
+table th {
 	background-color: #DDDDDD;
-	border-radius: 20px;
-	padding: 20px;
-	width: 90%;
+	padding: 10px;
+}
+
+table td {
+	padding: 5px 10px;
+	background-color: #EEEEEE;
+}
+
+#addCommentForm {
+	display: none;
+}
+
+footer {
+	background: #DDDDDD;
+	padding: 5px 10px;
+	font-size: 0.8em;
+	border-radius: 3px;
 }
