@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List of Items</title>
+</head>
+<body>
+<h1>List of Items</h1>
+<ul id="list">
+    <li>First</li>
+    <li>Second</li>
+</ul>
+<input type="text" id="text-to-insert">
+<button id="add-button" onclick=addItem()>Add</button>
+</body>
+<script>
+    function addItem() {
+        let textToInsert = document.getElementById('text-to-insert').value;
+        var li = document.createElement("li");
+        li.appendChild(document.createTextNode(textToInsert));
+        document.getElementById('list').appendChild(li);
+        document.getElementById('text-to-insert').value = '';
+    }
+</script>
+</html>
