@@ -18,44 +18,56 @@
 
 	let homeView = new HomeView(selector, mainContentSelector);
 	let homeController = new HomeController(homeView, requester, baseUrl, appKey);
-	homeController.showGuestPage();
+
+	let userView = new UserView(selector, mainContentSelector);
+
+	let postView = new PostView(selector, mainContentSelector);
+	let postController = new PostController(postView, requester, baseUrl, appKey);
 
 	initEventServices();
 
 	onRoute("#/", function () {
-		// Check if user is logged in and if its not show the guest page, otherwise show the user page...
+		if (authService.isLoggedIn()) {
+			homeController.showUserPage();
+		}
+		else {
+			homeController.showGuestPage();
+		}
 	});
 
 	onRoute("#/post-:id", function () {
-		// Create a redirect to one of the recent posts...
+		let top = $("#post-" + this.params['id']).position().top;
+		$(window).scrollTop(top);
 	});
 
 	onRoute("#/login", function () {
-		// Show the login page...
+		userController.showLoginPage(authService.isLoggedIn());
 	});
 
 	onRoute("#/register", function () {
-		// Show the register page...
+		userController.showRegisterPage(authService.isLoggedIn());
 	});
 
 	onRoute("#/logout", function () {
-		// Logout the current user...
+		userController.logout();
 	});
 
 	onRoute('#/posts/create', function () {
-		// Show the new post page...
+		let data = {fullName: sessionStorage['fullName']};
+
+		postController.showCreatePostPage(data, authService.isLoggedIn());
 	});
 
 	bindEventHandler('login', function (ev, data) {
-		// Login the user...
+		userController.login(data)
 	});
 
 	bindEventHandler('register', function (ev, data) {
-		// Register a new user...
+		userController.register(data)
 	});
 
 	bindEventHandler('createPost', function (ev, data) {
-		// Create a new post...
+		postController.createPost(data);
 	});
 
 	run('#/');

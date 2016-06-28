@@ -29,14 +29,14 @@ class HomeView {
 	}
 
 	showUserPage(sideBarData, mainData) {
-		let _taht = this;
+		let _that = this;
 
-		$.get('tempaltes/welcome-user.html', function (template) {
-			let renderedWrapper = Mustache.render(tempalte, null);
+		$.get('templates/welcome-user.html', function (template) {
+			let renderedWrapper = Mustache.render(template, null);
 
-			$(_taht._wrapperSelector).html(renderedWrapper);
+			$(_that._wrapperSelector).html(renderedWrapper);
 
-			$.get('tempaltes/recent-posts.html', function (template) {
+			$.get('templates/recent-posts.html', function (template) {
 				let recentPosts = {recentPosts: sideBarData};
 
 				let renderedRecentPosts = Mustache.render(template, recentPosts);
