@@ -17,17 +17,18 @@
     $b = intval($_GET['num2']);
     $c = intval($_GET['num3']);
     $count = 0;
-    if ($a < 0) {
-        $count++;
-    }
-    if ($b < 0) {
-        $count++;
-    }
-    if ($c < 0) {
-        $count++;
+    $numbers = array($a, $b, $c);
+	
+    foreach ($numbers as &$number) {
+        if ($number < 0) {
+            $count++;
+        } else if ($number == 0) {
+            echo "Positive";
+            return;
+        }
     }
 
-    if ($count % 2 == 0 || $a == 0 || $b == 0 || $c == 0) {
+    if ($count % 2 == 0) {
         echo "Positive";
     } else {
         echo "Negative";
