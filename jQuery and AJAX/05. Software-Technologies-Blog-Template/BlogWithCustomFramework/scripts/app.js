@@ -20,6 +20,7 @@
 	let homeController = new HomeController(homeView, requester, baseUrl, appKey);
 
 	let userView = new UserView(selector, mainContentSelector);
+	let userController = new UserController(userView, requester, baseUrl, appKey);
 
 	let postView = new PostView(selector, mainContentSelector);
 	let postController = new PostController(postView, requester, baseUrl, appKey);
