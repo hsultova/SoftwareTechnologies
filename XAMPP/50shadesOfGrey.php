@@ -14,17 +14,13 @@
 </head>
 <body>
 <?php
-$r = 0;
-$g = 0;
-$b = 0;
 for ($i = 0; $i < 5; $i ++) {
+  	$rgb = $i*51;
     for ($j = 0; $j < 10; $j++) {
-        echo "<div style='background-color: rgb($r,$g,$b)'></div>";
-        $r+=5;
-        $g+=5;
-        $b+=5;
+        echo "<div style=\"background-color: rgb($rgb, $rgb, $rgb);\"></div>";
+        $rgb+=5;
     }
-    echo "/n";
+    echo "<br>";
 }
 ?>
 </body>
