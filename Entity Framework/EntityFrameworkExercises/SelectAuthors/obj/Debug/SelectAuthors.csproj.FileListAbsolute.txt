@@ -1,0 +1,11 @@
+c:\users\hris\documents\visual studio 2015\Projects\EntityFrameworkExercises\SelectAuthors\bin\Debug\SelectAuthors.exe.config
+c:\users\hris\documents\visual studio 2015\Projects\EntityFrameworkExercises\SelectAuthors\bin\Debug\SelectAuthors.exe
+c:\users\hris\documents\visual studio 2015\Projects\EntityFrameworkExercises\SelectAuthors\bin\Debug\SelectAuthors.pdb
+c:\users\hris\documents\visual studio 2015\Projects\EntityFrameworkExercises\SelectAuthors\bin\Debug\EntityFramework.dll
+c:\users\hris\documents\visual studio 2015\Projects\EntityFrameworkExercises\SelectAuthors\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\hris\documents\visual studio 2015\Projects\EntityFrameworkExercises\SelectAuthors\bin\Debug\Models.dll
+c:\users\hris\documents\visual studio 2015\Projects\EntityFrameworkExercises\SelectAuthors\bin\Debug\Models.pdb
+c:\users\hris\documents\visual studio 2015\Projects\EntityFrameworkExercises\SelectAuthors\bin\Debug\EntityFramework.xml
+c:\users\hris\documents\visual studio 2015\Projects\EntityFrameworkExercises\SelectAuthors\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\hris\documents\visual studio 2015\Projects\EntityFrameworkExercises\SelectAuthors\obj\Debug\SelectAuthors.exe
+c:\users\hris\documents\visual studio 2015\Projects\EntityFrameworkExercises\SelectAuthors\obj\Debug\SelectAuthors.pdb

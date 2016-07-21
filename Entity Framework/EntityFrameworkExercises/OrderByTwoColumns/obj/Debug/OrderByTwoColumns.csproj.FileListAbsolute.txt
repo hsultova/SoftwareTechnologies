@@ -1,0 +1,11 @@
+c:\users\hris\documents\visual studio 2015\Projects\EntityFrameworkExercises\OrderByTwoColumns\bin\Debug\OrderByTwoColumns.exe.config
+c:\users\hris\documents\visual studio 2015\Projects\EntityFrameworkExercises\OrderByTwoColumns\bin\Debug\OrderByTwoColumns.exe
+c:\users\hris\documents\visual studio 2015\Projects\EntityFrameworkExercises\OrderByTwoColumns\bin\Debug\OrderByTwoColumns.pdb
+c:\users\hris\documents\visual studio 2015\Projects\EntityFrameworkExercises\OrderByTwoColumns\bin\Debug\EntityFramework.dll
+c:\users\hris\documents\visual studio 2015\Projects\EntityFrameworkExercises\OrderByTwoColumns\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\hris\documents\visual studio 2015\Projects\EntityFrameworkExercises\OrderByTwoColumns\bin\Debug\Models.dll
+c:\users\hris\documents\visual studio 2015\Projects\EntityFrameworkExercises\OrderByTwoColumns\bin\Debug\Models.pdb
+c:\users\hris\documents\visual studio 2015\Projects\EntityFrameworkExercises\OrderByTwoColumns\bin\Debug\EntityFramework.xml
+c:\users\hris\documents\visual studio 2015\Projects\EntityFrameworkExercises\OrderByTwoColumns\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\hris\documents\visual studio 2015\Projects\EntityFrameworkExercises\OrderByTwoColumns\obj\Debug\OrderByTwoColumns.exe
+c:\users\hris\documents\visual studio 2015\Projects\EntityFrameworkExercises\OrderByTwoColumns\obj\Debug\OrderByTwoColumns.pdb

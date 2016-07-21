@@ -1,0 +1,12 @@
+c:\users\hris\documents\visual studio 2015\Projects\EntityFrameworkExercises\ListTitleAndBodyFromPosts\obj\Debug\ListTitleAndBodyFromPosts.csprojResolveAssemblyReference.cache
+c:\users\hris\documents\visual studio 2015\Projects\EntityFrameworkExercises\ListTitleAndBodyFromPosts\bin\Debug\ListTitleAndBodyFromPosts.exe.config
+c:\users\hris\documents\visual studio 2015\Projects\EntityFrameworkExercises\ListTitleAndBodyFromPosts\bin\Debug\ListTitleAndBodyFromPosts.exe
+c:\users\hris\documents\visual studio 2015\Projects\EntityFrameworkExercises\ListTitleAndBodyFromPosts\bin\Debug\ListTitleAndBodyFromPosts.pdb
+c:\users\hris\documents\visual studio 2015\Projects\EntityFrameworkExercises\ListTitleAndBodyFromPosts\bin\Debug\EntityFramework.dll
+c:\users\hris\documents\visual studio 2015\Projects\EntityFrameworkExercises\ListTitleAndBodyFromPosts\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\hris\documents\visual studio 2015\Projects\EntityFrameworkExercises\ListTitleAndBodyFromPosts\bin\Debug\Models.dll
+c:\users\hris\documents\visual studio 2015\Projects\EntityFrameworkExercises\ListTitleAndBodyFromPosts\bin\Debug\Models.pdb
+c:\users\hris\documents\visual studio 2015\Projects\EntityFrameworkExercises\ListTitleAndBodyFromPosts\bin\Debug\EntityFramework.xml
+c:\users\hris\documents\visual studio 2015\Projects\EntityFrameworkExercises\ListTitleAndBodyFromPosts\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\hris\documents\visual studio 2015\Projects\EntityFrameworkExercises\ListTitleAndBodyFromPosts\obj\Debug\ListTitleAndBodyFromPosts.exe
+c:\users\hris\documents\visual studio 2015\Projects\EntityFrameworkExercises\ListTitleAndBodyFromPosts\obj\Debug\ListTitleAndBodyFromPosts.pdb

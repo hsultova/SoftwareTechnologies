@@ -1,0 +1,11 @@
+c:\users\hris\documents\visual studio 2015\Projects\EntityFrameworkExercises\SelectAuthorOfSpecificPost\bin\Debug\SelectAuthorOfSpecificPost.exe.config
+c:\users\hris\documents\visual studio 2015\Projects\EntityFrameworkExercises\SelectAuthorOfSpecificPost\bin\Debug\SelectAuthorOfSpecificPost.exe
+c:\users\hris\documents\visual studio 2015\Projects\EntityFrameworkExercises\SelectAuthorOfSpecificPost\bin\Debug\SelectAuthorOfSpecificPost.pdb
+c:\users\hris\documents\visual studio 2015\Projects\EntityFrameworkExercises\SelectAuthorOfSpecificPost\bin\Debug\EntityFramework.dll
+c:\users\hris\documents\visual studio 2015\Projects\EntityFrameworkExercises\SelectAuthorOfSpecificPost\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\hris\documents\visual studio 2015\Projects\EntityFrameworkExercises\SelectAuthorOfSpecificPost\bin\Debug\Models.dll
+c:\users\hris\documents\visual studio 2015\Projects\EntityFrameworkExercises\SelectAuthorOfSpecificPost\bin\Debug\Models.pdb
+c:\users\hris\documents\visual studio 2015\Projects\EntityFrameworkExercises\SelectAuthorOfSpecificPost\bin\Debug\EntityFramework.xml
+c:\users\hris\documents\visual studio 2015\Projects\EntityFrameworkExercises\SelectAuthorOfSpecificPost\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\hris\documents\visual studio 2015\Projects\EntityFrameworkExercises\SelectAuthorOfSpecificPost\obj\Debug\SelectAuthorOfSpecificPost.exe
+c:\users\hris\documents\visual studio 2015\Projects\EntityFrameworkExercises\SelectAuthorOfSpecificPost\obj\Debug\SelectAuthorOfSpecificPost.pdb

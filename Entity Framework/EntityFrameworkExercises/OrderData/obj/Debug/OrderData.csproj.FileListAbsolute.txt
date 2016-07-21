@@ -1,0 +1,11 @@
+c:\users\hris\documents\visual studio 2015\Projects\EntityFrameworkExercises\OrderData\bin\Debug\OrderData.exe.config
+c:\users\hris\documents\visual studio 2015\Projects\EntityFrameworkExercises\OrderData\bin\Debug\OrderData.exe
+c:\users\hris\documents\visual studio 2015\Projects\EntityFrameworkExercises\OrderData\bin\Debug\OrderData.pdb
+c:\users\hris\documents\visual studio 2015\Projects\EntityFrameworkExercises\OrderData\bin\Debug\EntityFramework.dll
+c:\users\hris\documents\visual studio 2015\Projects\EntityFrameworkExercises\OrderData\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\hris\documents\visual studio 2015\Projects\EntityFrameworkExercises\OrderData\bin\Debug\Models.dll
+c:\users\hris\documents\visual studio 2015\Projects\EntityFrameworkExercises\OrderData\bin\Debug\Models.pdb
+c:\users\hris\documents\visual studio 2015\Projects\EntityFrameworkExercises\OrderData\bin\Debug\EntityFramework.xml
+c:\users\hris\documents\visual studio 2015\Projects\EntityFrameworkExercises\OrderData\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\hris\documents\visual studio 2015\Projects\EntityFrameworkExercises\OrderData\obj\Debug\OrderData.exe
+c:\users\hris\documents\visual studio 2015\Projects\EntityFrameworkExercises\OrderData\obj\Debug\OrderData.pdb

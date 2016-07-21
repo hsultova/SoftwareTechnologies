@@ -1,0 +1,14 @@
+c:\users\hris\documents\visual studio 2015\Projects\EntityFrameworkExercises\CreateAndUpdateData\bin\Debug\CreateAndUpdateData.exe.config
+c:\users\hris\documents\visual studio 2015\Projects\EntityFrameworkExercises\CreateAndUpdateData\bin\Debug\CreateAndUpdateData.exe
+c:\users\hris\documents\visual studio 2015\Projects\EntityFrameworkExercises\CreateAndUpdateData\bin\Debug\CreateAndUpdateData.pdb
+c:\users\hris\documents\visual studio 2015\Projects\EntityFrameworkExercises\CreateAndUpdateData\bin\Debug\EntityFramework.dll
+c:\users\hris\documents\visual studio 2015\Projects\EntityFrameworkExercises\CreateAndUpdateData\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\hris\documents\visual studio 2015\Projects\EntityFrameworkExercises\CreateAndUpdateData\bin\Debug\Models.dll
+c:\users\hris\documents\visual studio 2015\Projects\EntityFrameworkExercises\CreateAndUpdateData\bin\Debug\Models.pdb
+c:\users\hris\documents\visual studio 2015\Projects\EntityFrameworkExercises\CreateAndUpdateData\bin\Debug\EntityFramework.xml
+c:\users\hris\documents\visual studio 2015\Projects\EntityFrameworkExercises\CreateAndUpdateData\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\hris\documents\visual studio 2015\Projects\EntityFrameworkExercises\CreateAndUpdateData\obj\Debug\CreateAndUpdateData.exe
+c:\users\hris\documents\visual studio 2015\Projects\EntityFrameworkExercises\CreateAndUpdateData\obj\Debug\CreateAndUpdateData.pdb
+D:\Projects\SoftwareTechnologies\Entity Framework\EntityFrameworkExercises\CreateAndUpdateData\bin\Debug\CreateAndUpdateData.exe.config
+D:\Projects\SoftwareTechnologies\Entity Framework\EntityFrameworkExercises\CreateAndUpdateData\obj\Debug\CreateAndUpdateData.exe
+D:\Projects\SoftwareTechnologies\Entity Framework\EntityFrameworkExercises\CreateAndUpdateData\obj\Debug\CreateAndUpdateData.pdb

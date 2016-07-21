@@ -1,0 +1,10 @@
+c:\users\hris\documents\visual studio 2015\Projects\BlogDBApp\BlogDBApp\bin\Debug\BlogDBApp.exe.config
+c:\users\hris\documents\visual studio 2015\Projects\BlogDBApp\BlogDBApp\bin\Debug\BlogDBApp.exe
+c:\users\hris\documents\visual studio 2015\Projects\BlogDBApp\BlogDBApp\bin\Debug\BlogDBApp.pdb
+c:\users\hris\documents\visual studio 2015\Projects\BlogDBApp\BlogDBApp\bin\Debug\EntityFramework.dll
+c:\users\hris\documents\visual studio 2015\Projects\BlogDBApp\BlogDBApp\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\hris\documents\visual studio 2015\Projects\BlogDBApp\BlogDBApp\bin\Debug\EntityFramework.xml
+c:\users\hris\documents\visual studio 2015\Projects\BlogDBApp\BlogDBApp\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\hris\documents\visual studio 2015\Projects\BlogDBApp\BlogDBApp\obj\Debug\BlogDBApp.csprojResolveAssemblyReference.cache
+c:\users\hris\documents\visual studio 2015\Projects\BlogDBApp\BlogDBApp\obj\Debug\BlogDBApp.exe
+c:\users\hris\documents\visual studio 2015\Projects\BlogDBApp\BlogDBApp\obj\Debug\BlogDBApp.pdb

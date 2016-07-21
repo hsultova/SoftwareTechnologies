@@ -1,0 +1,10 @@
+c:\users\hris\documents\visual studio 2015\Projects\EntityFrameworkExercises\Models\obj\Debug\Models.csprojResolveAssemblyReference.cache
+c:\users\hris\documents\visual studio 2015\Projects\EntityFrameworkExercises\Models\bin\Debug\Models.dll.config
+c:\users\hris\documents\visual studio 2015\Projects\EntityFrameworkExercises\Models\bin\Debug\Models.dll
+c:\users\hris\documents\visual studio 2015\Projects\EntityFrameworkExercises\Models\bin\Debug\Models.pdb
+c:\users\hris\documents\visual studio 2015\Projects\EntityFrameworkExercises\Models\bin\Debug\EntityFramework.dll
+c:\users\hris\documents\visual studio 2015\Projects\EntityFrameworkExercises\Models\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\hris\documents\visual studio 2015\Projects\EntityFrameworkExercises\Models\bin\Debug\EntityFramework.xml
+c:\users\hris\documents\visual studio 2015\Projects\EntityFrameworkExercises\Models\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\hris\documents\visual studio 2015\Projects\EntityFrameworkExercises\Models\obj\Debug\Models.dll
+c:\users\hris\documents\visual studio 2015\Projects\EntityFrameworkExercises\Models\obj\Debug\Models.pdb
