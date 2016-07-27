@@ -51,3 +51,19 @@ HTML5 and CSS/other exercises/.idea/inspectionProfiles/Project_Default.xml
 *.xml
 HTML5 and CSS/SoftUniBlog/.idea/workspace.xml
 *.xml
+*.dll
+*.nupkg
+*.transform
+*.ps1
+*.psm1
+*.xdt
+*.targets
+*.rtf
+*.map
+*.woff
+*.svg
+*.pdb
+*.eot
+*.ttf
+*.psd1
+*.props
