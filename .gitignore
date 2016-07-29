@@ -67,3 +67,5 @@ HTML5 and CSS/SoftUniBlog/.idea/workspace.xml
 *.ttf
 *.psd1
 *.props
+*.cache
+*.suo
