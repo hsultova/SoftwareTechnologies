@@ -1,0 +1,11 @@
+﻿@model IEnumerable<MessageBoard.Models.Category>
+
+<div id="sidebar">
+    <ul>
+        @foreach (var category in Model)
+        {
+            <li>@category.Name</li>
+        }
+    </ul>
+</div>
+
