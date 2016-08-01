@@ -19,5 +19,9 @@ namespace MessageBoard.Models
 		public string UserId { get; set; }
 
 		public int TopicId { get; set; }
+
+		public ApplicationUser User { get; set; }
+
+		public Topic Topic { get; set; }
 	}
 }

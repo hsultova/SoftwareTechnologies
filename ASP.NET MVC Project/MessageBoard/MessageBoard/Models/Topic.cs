@@ -23,6 +23,10 @@ namespace MessageBoard.Models
 
 		public int CategoryId { get; set; }
 
+		public ApplicationUser User { get; set; }
+
+		public Category Category { get; set; }
+
 		public virtual ICollection<Comment> Comments { get; set; }
 	}
 }
