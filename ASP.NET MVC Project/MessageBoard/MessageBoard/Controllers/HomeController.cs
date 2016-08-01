@@ -11,9 +11,17 @@ namespace MessageBoard.Controllers
 	public class HomeController : Controller
 	{
 		private ApplicationDbContext db = new ApplicationDbContext();
-		public ActionResult Index()
+		public ActionResult Index(string search)
 		{
-			return View(db.Categories.ToList());
+			var topics = db.Topics.Select(t => t).Include(t => t.Category);
+
+			if (!String.IsNullOrEmpty(search))
+			{
+
+				topics = topics.Where(s => s.Title.Contains(search));
+			}
+
+			return View(topics);
 		}
 	}
 }
