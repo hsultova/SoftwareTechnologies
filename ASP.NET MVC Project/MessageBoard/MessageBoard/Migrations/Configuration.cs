@@ -10,9 +10,9 @@
 
 	internal sealed class Configuration : DbMigrationsConfiguration<MessageBoard.Models.ApplicationDbContext>
 	{
-		private List<ApplicationUser> _users;
-		private List<Category> _categories;
-		private List<Topic> _topics;
+		//private List<ApplicationUser> _users;
+		//private List<Category> _categories;
+		//private List<Topic> _topics;
 		public Configuration()
 		{
 			AutomaticMigrationsEnabled = true;
@@ -24,48 +24,48 @@
 		{
 			if (!context.Users.Any())
 			{
-				_users = new List<ApplicationUser>();
-				_categories = new List<Category>();
-				_topics = new List<Topic>();
+				//_users = new List<ApplicationUser>();
+				//_categories = new List<Category>();
+				//_topics = new List<Topic>();
 
-				_users.Add(CreateUser(context, "admin@gmail.com", "123123", "System Administrator"));
-				_users.Add(CreateUser(context, "ivan@gmail.com", "123456", "Ivan Ivanov"));
-				_users.Add(CreateUser(context, "maria@gmail.com", "123456", "Maria Georgieva"));
-				_users.Add(CreateUser(context, "gpetrov@gmail.com", "123456", "Georgi Petrov"));
+				CreateUser(context, "admin@gmail.com", "123123", "System Administrator");
+				CreateUser(context, "ivan@gmail.com", "123456", "Ivan Ivanov");
+				CreateUser(context, "maria@gmail.com", "123456", "Maria Georgieva");
+				CreateUser(context, "gpetrov@gmail.com", "123456", "Georgi Petrov");
 
 				CreateRole(context, "Administrators");
 				AddUserToRole(context, "admin@gmail.com", "Administrators");
 
-				_categories.Add(CreateCategory(context,
+				CreateCategory(context,
 					name: "Board Games",
 					description: "A board game is a tabletop game that involves counters or pieces moved or placed on a pre-marked surface or board, according to a set of rules. Some games are based on pure strategy, but many contain an element of chance; and some are purely chance, with no element of skill.Games usually have a goal that a player aims to achieve. Early board games represented a battle between two armies, and most modern board games are still based on defeating opposing players in terms of counters, winning position, or accrual of points."
-				));
+				);
 
-				_categories.Add(CreateCategory(context,
-					name: "PS4",
-					description: "Talks about PS4"
-				));
+				CreateCategory(context,
+						name: "PS4",
+						description: "Talks about PS4"
+					);
 
-				_categories.Add(CreateCategory(context,
+				CreateCategory(context,
 					name: "PC Games",
 					description: ""
-					));
+					);
 
 				context.SaveChanges();
 
-				_topics.Add(CreateTopic(context, "Dixit",
+				CreateTopic(context, "Dixit",
 					@"Has there ever been a recorded case of Dixit cards mating and spawning new cards on their own? I've been playing for years and 
 					I swear there are cards in the box I've never seen before....Love this game!",
 					new DateTime(2016, 7, 30),
 					"ivan@gmail.com",
-					"Board Games"));
+					"Board Games");
 
-				_topics.Add(CreateTopic(context, "Cards worth disenchanting for sure",
+				CreateTopic(context, "Cards worth disenchanting for sure",
 					@"Hi, I'm fairly new to heartstone and I was wandering if someone could 
 					make a list of the cards that are so terrible that they are almost always worth disenchanting because they don't fint any competitve constructed deck and never will. I appreciate the help of anyone who is willing to help making this a guide to noob player like me :)",
 					new DateTime(2016, 6, 5),
 					"gpetrov@gmail.com",
-					"PC Games"));
+					"PC Games");
 
 				context.SaveChanges();
 
@@ -153,8 +153,8 @@
 			topic.Title = title;
 			topic.Content = content;
 			topic.DateCreated = date;
-			topic.UserId = _users.Single(u => u.UserName == username).Id;
-			topic.CategoryId = _categories.Single(c => c.Name == categoryName).Id;
+			topic.User = context.Users.Where(u => u.UserName == username).FirstOrDefault(); ;
+			topic.Category = context.Categories.Where(c => c.Name == categoryName).FirstOrDefault();
 			context.Topics.Add(topic);
 
 			return topic;
@@ -165,8 +165,8 @@
 			var comment = new Comment();
 			comment.Text = text;
 			comment.DateCreated = date;
-			comment.UserId = _users.Single(u => u.UserName == username).Id;
-			comment.TopicId = _topics.Single(t => t.Title == topicTitle).Id;
+			comment.User = context.Users.Where(u => u.UserName == username).FirstOrDefault();
+			comment.Topic = context.Topics.Where(t => t.Title == topicTitle).FirstOrDefault();
 			context.Comments.Add(comment);
 		}
 	}
