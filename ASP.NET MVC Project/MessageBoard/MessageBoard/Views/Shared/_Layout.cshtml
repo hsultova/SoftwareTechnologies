@@ -3,10 +3,12 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title -Message Board</title>
+    <title>@ViewBag.Title Message Board</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
+    @Scripts.Render("~/bundles/jquery")
+    <link type="text/css" rel="stylesheet" href="~/Content/Site.css" />
+    <script type="text/javascript" src="@Url.Content("/Scripts/script.js")"></script>
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -22,7 +24,9 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Categories", "Index", "Categories")</li>
+                    @if (User.IsInRole("Administrators"))
+                    {
+                        <li>@Html.ActionLink("Categories", "Index", "Categories")</li>}
                     <li>@Html.ActionLink("Topics", "Index", "Topics")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
@@ -30,16 +34,16 @@
         </div>
     </div>
 
-    <div id="sidebar">
-        @Html.Partial("_SIdebar");
-    </div>
+    @*@Html.Partial("_Sidebar");*@
 
     <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - Message Board</p>
-        </footer>
+        <div class="row">
+            @RenderBody()
+            <hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - Message Board</p>
+            </footer>
+        </div>
     </div>
 
     @Scripts.Render("~/bundles/jquery")

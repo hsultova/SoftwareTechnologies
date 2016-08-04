@@ -1,15 +1,45 @@
 ﻿@model MessageBoard.Models.Topic
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = Model.Title;
 }
 
-<h2>Details</h2>
+<div class="h2 panel-title">@Html.DisplayFor(model => model.Title)</div>
+@Html.DisplayFor(model => model.Content)
+@Html.DisplayFor(model => model.User.FullName)
+@Html.DisplayFor(model => model.DateCreated)
+
+<ul>
+    @foreach (var comment in Model.Comments)
+    {
+        <li class="comment"><a href="@Url.Action("Details", "Comments", new { id=comment.Id })"> @comment.Text @*<span> @comment.User.FullName</span>*@<span> @comment.DateCreated</span></a></li>
+    }
+</ul>
+
+<button class="btn btn-success">@Url.Action("Create", "Comments", new { topic = this })</button>
+
+@*<h2>Details</h2>
 
 <div>
     <h4>Topic</h4>
     <hr />
     <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Category)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.User)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User.FullName)
+        </dd>
+
         <dt>
             @Html.DisplayNameFor(model => model.Title)
         </dt>
@@ -34,25 +64,9 @@
             @Html.DisplayFor(model => model.DateCreated)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.UserId)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.UserId)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.CategoryId)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.CategoryId)
-        </dd>
-
     </dl>
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
     @Html.ActionLink("Back to List", "Index")
-</p>
+</p>*@

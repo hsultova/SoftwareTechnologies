@@ -1,3 +1,47 @@
-﻿@{
-    ViewBag.Title = "Home Page";
+﻿@model IEnumerable<MessageBoard.Models.Topic>
+
+@using (Html.BeginForm())
+{
+    <div class="form-inline">
+        @Html.TextBox("search", null, new { @class = "form-control", placeholder = "Search Topic..." })
+        <button class="btn btn-primary" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+    </div>
 }
+<div class="list-group">
+    @foreach (var item in Model)
+    {
+        <a href="@Url.Action("Details", "Topics", new { id=item.Id })" class="list-group-item">@Html.DisplayFor(modelItem => item.Category.Name): @Html.DisplayFor(modelItem => item.Title)</a> @*- @Html.DisplayFor(modelItem => item.Content) </a>        <small><a href="#" id="readMore">Show Less</a></small>*@
+    }
+</div>
+
+@if(User.Identity.IsAuthenticated)
+{
+    @Html.ActionLink("Create Topic", "Create", "Topics")
+}
+@*<table class="table-hover">
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Category.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Content, null, new { @class = "read" })
+                </td>
+            </tr>
+        }
+    </table>
+
+    <script>
+        $('#readMore').click(
+            function () {
+                $('.read').toggleClass('read-less');
+                if ($(this).text() == 'Show Less') $(this).text('Show More');
+                else $(this).text('Show Less');
+            }
+        );
+    </script>*@
