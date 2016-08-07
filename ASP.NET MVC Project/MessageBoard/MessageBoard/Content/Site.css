@@ -1,5 +1,5 @@
 ﻿body {
-    padding-top: 50px;
+    padding-top: 80px;
     padding-bottom: 20px;
 }
 
@@ -22,3 +22,46 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.read {
+    overflow: hidden;
+    font-size: 16px !important;
+    transition: all 0.3s;
+    margin-bottom: 10px;
+}
+
+.read-less {
+    height: 90px !important;
+}
+
+.comment {
+    background-color: lightgray;
+    margin: 10px 10px;
+    padding: 10px;
+}
+
+@media (min-width: 768px) {
+    .sidebar-nav .navbar .navbar-collapse {
+        padding: 0;
+        max-height: none;
+        text-decoration: none;
+    }
+
+    .sidebar-nav .navbar ul {
+        float: none;
+        display: block;
+        text-decoration: none;
+    }
+
+    .sidebar-nav .navbar li {
+        float: none;
+        display: block;
+    }
+
+        .sidebar-nav .navbar li a {
+            padding-top: 12px;
+            padding-bottom: 12px;
+        }
+}
+
+
