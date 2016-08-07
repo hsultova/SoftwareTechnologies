@@ -23,5 +23,11 @@ namespace MessageBoard.Controllers
 
 			return View(topics);
 		}
+
+		public ActionResult Sidebar()
+		{
+			var categories = db.Categories.ToList();
+			return PartialView(categories);
+		}
 	}
 }
