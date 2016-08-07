@@ -1,23 +1,34 @@
 ﻿@model IEnumerable<MessageBoard.Models.Topic>
 
-@using (Html.BeginForm())
-{
-    <div class="form-inline">
-        @Html.TextBox("search", null, new { @class = "form-control", placeholder = "Search Topic..." })
-        <button class="btn btn-primary" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+<div class="row">
+    <div class="col-md-12">
+        @using (Html.BeginForm())
+        {
+            <div class="form-inline">
+                @Html.TextBox("search", null, new { @class = "form-control", placeholder = "Search Topic..." })
+                <button class="btn btn-primary" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+            </div>
+        }
+        <br />
     </div>
-}
-<div class="list-group">
-    @foreach (var item in Model)
-    {
-        <a href="@Url.Action("Details", "Topics", new { id=item.Id })" class="list-group-item">@Html.DisplayFor(modelItem => item.Category.Name): @Html.DisplayFor(modelItem => item.Title)</a> @*- @Html.DisplayFor(modelItem => item.Content) </a>        <small><a href="#" id="readMore">Show Less</a></small>*@
-    }
+</div>
+<div class="row">
+    <div class="col-md-8">
+        <div class="list-group">
+            @foreach (var item in Model)
+            {
+                <a href="@Url.Action("Details", "Topics", new { id=item.Id })" class="list-group-item">@Html.DisplayFor(modelItem => item.Category.Name): @Html.DisplayFor(modelItem => item.Title)</a> @*- @Html.DisplayFor(modelItem => item.Content) </a>        <small><a href="#" id="readMore">Show Less</a></small>*@}
+        </div>
+    </div>
+    <div class="col-md-4">
+        @if (User.Identity.IsAuthenticated)
+        {
+            @Html.ActionLink("Create Topic", "Create", "Topics")
+        }
+    </div>
 </div>
 
-@if(User.Identity.IsAuthenticated)
-{
-    @Html.ActionLink("Create Topic", "Create", "Topics")
-}
+
 @*<table class="table-hover">
 
         @foreach (var item in Model)
