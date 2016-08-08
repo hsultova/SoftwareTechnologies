@@ -17,7 +17,8 @@ namespace MessageBoard.Controllers
         // GET: Categories
         public ActionResult Index()
         {
-            return View(db.Categories.ToList());
+			var categories = db.Categories.OrderBy(c => c.Name).ThenBy(c => c.Description);
+            return View(categories.ToList());
         }
 
         // GET: Categories/Details/5

@@ -4,15 +4,18 @@
     ViewBag.Title = "Details";
 }
 
-<h2>@Html.DisplayFor(model => model.Name)</h2>
+<div class="row h3 page-header">
+    <a href="@Url.Action("Index", "Categories")" class="col-md-2">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <span class="col-md-10">@Html.DisplayFor(model => model.Name)</span>
+</div>
 
-<hr />
 <div>@Html.DisplayFor(model => model.Description)</div>
 
 @if (User.IsInRole("Administrators"))
 {
-    <p>
-        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-        @Html.ActionLink("Back to List", "Index")
-    </p>
+    <a href="@Url.Action("Edit", "Categories")">
+        <span class="glyphicon glyphicon-edit"></span>
+    </a>
 }
