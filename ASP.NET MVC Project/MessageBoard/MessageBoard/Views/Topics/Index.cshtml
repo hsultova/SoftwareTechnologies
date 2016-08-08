@@ -4,44 +4,48 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Topics</h2>
+<h2>Last Added Topics</h2>
 @if (User.Identity.IsAuthenticated)
 {
-    <p>
-        @Html.ActionLink("Create New Topic", "Create")
-    </p>
+    <a href="@Url.Action("Create", "Topics")">
+        <span class="btn btn-primary"><span class="glyphicon glyphicon-plus-sign"></span> Add New Topic</span>
+    </a>
 }
 
 <table class="table-condensed table-hover">
 
     @foreach (var item in Model)
     {
-        <tr>
-            <th>
+        <tr class="row">
+            <th class="col-md-2">
                 @Html.DisplayFor(modelItem => item.Category.Name)
             </th>
-            <td>
+            <td class="col-md-2">
                 @Html.DisplayFor(modelItem => item.Title)
             </td>
-            <td>
+            <td class="col-md-3">
                 @Html.DisplayFor(modelItem => item.Content)
             </td>
-            <td>
+            <td class="col-md-2">
                 @Html.DisplayFor(modelItem => item.User.FullName)
             </td>
-            <td>
+            <td class="col-md-2">
                 @Html.DisplayFor(modelItem => item.DateCreated)
             </td>
-            <td>
-                @Html.ActionLink("Details", "Details", new { id = item.Id })
+            <td class="col-md-1">
+                <a href="@Url.Action("Details", "Topics", new { id = item.Id })">
+                    <span class="glyphicon glyphicon-info-sign"></span>
+                </a>
                 @if (User.IsInRole("Administrators"))
                 {
-                    @:|
-                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) @:|
-                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-}
+                    <a href="@Url.Action("Edit", "Topics", new { id = item.Id })">
+                        <span class="glyphicon glyphicon-edit"></span>
+                    </a>
+                    <a href="@Url.Action("Delete", "Topics", new { id = item.Id })">
+                        <span class="glyphicon glyphicon-remove-sign"></span>
+                    </a>
+                }
             </td>
         </tr>
     }
-
 </table>

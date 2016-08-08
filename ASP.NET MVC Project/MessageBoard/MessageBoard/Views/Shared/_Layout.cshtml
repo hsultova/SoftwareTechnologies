@@ -30,7 +30,7 @@
                     @if (User.IsInRole("Administrators"))
                     {
                         <li>@Html.ActionLink("Categories", "Index", "Categories")</li>}
-                    <li>@Html.ActionLink("Topics", "Index", "Topics")</li>
+                    <li>@Html.ActionLink("Last Added Topics", "Index", "Topics")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
