@@ -1,10 +1,12 @@
 ﻿@model MessageBoard.Models.Topic
 
-@{
-    ViewBag.Title = Model.Title;
-}
+<div class="row h3 page-header">
+    <a href="@Url.Action("Index", "Topics")" class="col-md-2">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <span class="col-md-10">@Model.Title</span>
+</div>
 
-<div class="h2 panel-title">@Html.DisplayFor(model => model.Title)</div>
 @Html.DisplayFor(model => model.Content)
 @Html.DisplayFor(model => model.User.FullName)
 @Html.DisplayFor(model => model.DateCreated)
@@ -12,61 +14,12 @@
 <ul>
     @foreach (var comment in Model.Comments)
     {
-        <li class="comment"><a href="@Url.Action("Details", "Comments", new { id=comment.Id })"> @comment.Text @*<span> @comment.User.FullName</span>*@<span> @comment.DateCreated</span></a></li>
+        <li class="comment"><a href="@Url.Action("Details", "Comments", new { id=comment.Id })"> @comment.Text @*<span> @comment.User.FullName</span>*@<span class="date"> @comment.DateCreated</span></a></li>
     }
 </ul>
 
-@*<button class="btn btn-success">@Url.Action("Create", "Comments", new { topic = this })</button>*@
-
-@*<h2>Details</h2>
-
-<div>
-    <h4>Topic</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Category)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Category.Name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.User)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.User.FullName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Title)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Content)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Content)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.DateCreated)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DateCreated)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>*@
+<form action="/Topics/AddComment" method="post">
+    <input type="hidden" name="id" value="@Model.Id" />
+    <input class="form-control input-lg" type="text" name="text" /> <br />
+    <input class="btn btn-primary" type="submit" value="Add Comment" />
+</form>
