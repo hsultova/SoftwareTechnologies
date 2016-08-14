@@ -15,6 +15,7 @@ namespace MessageBoard.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Categories
+		[Authorize(Roles  = "Administrators")]
         public ActionResult Index()
         {
 			var categories = db.Categories.OrderBy(c => c.Name).ThenBy(c => c.Description);
@@ -36,8 +37,9 @@ namespace MessageBoard.Controllers
             return View(category);
         }
 
-        // GET: Categories/Create
-        public ActionResult Create()
+		// GET: Categories/Create
+		[Authorize(Roles = "Administrators")]
+		public ActionResult Create()
         {
             return View();
         }
@@ -47,7 +49,8 @@ namespace MessageBoard.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,Description")] Category category)
+		[Authorize(Roles = "Administrators")]
+		public ActionResult Create([Bind(Include = "Id,Name,Description")] Category category)
         {
             if (ModelState.IsValid)
             {
@@ -59,8 +62,9 @@ namespace MessageBoard.Controllers
             return View(category);
         }
 
-        // GET: Categories/Edit/5
-        public ActionResult Edit(int? id)
+		// GET: Categories/Edit/5
+		[Authorize(Roles = "Administrators")]
+		public ActionResult Edit(int? id)
         {
             if (id == null)
             {
@@ -79,7 +83,8 @@ namespace MessageBoard.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name,Description")] Category category)
+		[Authorize(Roles = "Administrators")]
+		public ActionResult Edit([Bind(Include = "Id,Name,Description")] Category category)
         {
             if (ModelState.IsValid)
             {
@@ -90,8 +95,9 @@ namespace MessageBoard.Controllers
             return View(category);
         }
 
-        // GET: Categories/Delete/5
-        public ActionResult Delete(int? id)
+		// GET: Categories/Delete/5
+		[Authorize(Roles = "Administrators")]
+		public ActionResult Delete(int? id)
         {
             if (id == null)
             {
@@ -108,7 +114,8 @@ namespace MessageBoard.Controllers
         // POST: Categories/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+		[Authorize(Roles = "Administrators")]
+		public ActionResult DeleteConfirmed(int id)
         {
             Category category = db.Categories.Find(id);
             db.Categories.Remove(category);
