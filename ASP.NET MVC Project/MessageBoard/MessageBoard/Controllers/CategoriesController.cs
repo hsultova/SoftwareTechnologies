@@ -22,8 +22,8 @@ namespace MessageBoard.Controllers
             return View(categories.ToList());
         }
 
-        // GET: Categories/Details/5
-        public ActionResult Details(int? id)
+		// GET: Categories/Details/5
+		public ActionResult Details(int? id)
         {
             if (id == null)
             {
