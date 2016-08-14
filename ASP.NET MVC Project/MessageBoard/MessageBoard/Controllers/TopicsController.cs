@@ -19,7 +19,7 @@ namespace MessageBoard.Controllers
 		// GET: Topics
 		public ActionResult Index()
 		{
-			var topics = db.Topics.Include(t => t.Category).Include(t => t.User);
+			var topics = db.Topics.OrderByDescending(t => t.DateCreated).Include(t => t.Category).Include(t => t.User);
 			return View(topics.ToList());
 		}
 
@@ -30,7 +30,7 @@ namespace MessageBoard.Controllers
 			{
 				return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
 			}
-			Topic topic = db.Topics.Include(t => t.User).Single(t => t.Id == id);
+			Topic topic = db.Topics.Include(t => t.User).SingleOrDefault(t => t.Id == id);
 			if (topic == null)
 			{
 				return HttpNotFound();
@@ -38,7 +38,26 @@ namespace MessageBoard.Controllers
 			return View(topic);
 		}
 
+		[Authorize]
+		[HttpPost]
+		public ActionResult AddComment(int id, string text)
+		{
+			var topic = db.Topics.SingleOrDefault(t => t.Id == id);
+			var comment = new Comment
+			{
+				Text = text,
+				DateCreated = DateTime.Now,
+				TopicId = id,
+				UserId = User.Identity.GetUserId()
+			};
+
+			db.Comments.Add(comment);
+			db.SaveChanges();
+			return RedirectToAction("Details", "Topics", new { id = topic.Id });
+		}
+
 		// GET: Topics/Create
+		[Authorize]
 		public ActionResult Create()
 		{
 			ViewBag.CategoryId = new SelectList(db.Categories, "Id", "Name");
@@ -51,6 +70,7 @@ namespace MessageBoard.Controllers
 		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
 		[HttpPost]
 		[ValidateAntiForgeryToken]
+		[Authorize]
 		public ActionResult Create([Bind(Include = "Id,Title,Content,UserId,CategoryId")] Topic topic)
 		{
 			if (ModelState.IsValid)
@@ -71,6 +91,7 @@ namespace MessageBoard.Controllers
 		}
 
 		// GET: Topics/Edit/5
+		[Authorize]
 		public ActionResult Edit(int? id)
 		{
 			if (id == null)
@@ -94,6 +115,7 @@ namespace MessageBoard.Controllers
 		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
 		[HttpPost]
 		[ValidateAntiForgeryToken]
+		[Authorize]
 		public ActionResult Edit([Bind(Include = "Id,Title,Content,DateCreated,UserId,CategoryId")] Topic topic)
 		{
 			if (ModelState.IsValid)
@@ -108,6 +130,7 @@ namespace MessageBoard.Controllers
 		}
 
 		// GET: Topics/Delete/5
+		[Authorize(Roles = "Administrators")]
 		public ActionResult Delete(int? id)
 		{
 			if (id == null)
@@ -125,6 +148,7 @@ namespace MessageBoard.Controllers
 		// POST: Topics/Delete/5
 		[HttpPost, ActionName("Delete")]
 		[ValidateAntiForgeryToken]
+		[Authorize(Roles = "Administrators")]
 		public ActionResult DeleteConfirmed(int id)
 		{
 			Topic topic = db.Topics.Find(id);
