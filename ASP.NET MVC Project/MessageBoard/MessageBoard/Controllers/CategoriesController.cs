@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using MessageBoard.Models;
+using MessageBoard.Extensions;
 
 namespace MessageBoard.Controllers
 {
@@ -56,7 +57,8 @@ namespace MessageBoard.Controllers
             {
                 db.Categories.Add(category);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+				this.AddNotification("Category created.", NotificationType.SUCCESS);
+				return RedirectToAction("Index");
             }
 
             return View(category);
@@ -90,7 +92,8 @@ namespace MessageBoard.Controllers
             {
                 db.Entry(category).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+				this.AddNotification("Category edited.", NotificationType.SUCCESS);
+				return RedirectToAction("Index");
             }
             return View(category);
         }
@@ -120,7 +123,8 @@ namespace MessageBoard.Controllers
             Category category = db.Categories.Find(id);
             db.Categories.Remove(category);
             db.SaveChanges();
-            return RedirectToAction("Index");
+			this.AddNotification("Category deleted.", NotificationType.SUCCESS);
+			return RedirectToAction("Index");
         }
 
         protected override void Dispose(bool disposing)
