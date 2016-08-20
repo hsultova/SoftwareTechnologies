@@ -20,7 +20,7 @@ namespace MessageBoard.Controllers
 
 				topics = topics.Where(s => s.Title.Contains(search));
 			}
-
+			
 			return View(topics);
 		}
 

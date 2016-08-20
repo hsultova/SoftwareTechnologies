@@ -32,7 +32,7 @@ namespace MessageBoard.Controllers
 			}
 			ViewBag.TopicId = new SelectList(db.Topics, "Id", "Title", comment.TopicId);
 			ViewBag.UserId = new SelectList(db.Users, "Id", "FullName", comment.UserId);
-			if (User.Identity.GetUserId() == comment.UserId)
+			if (User.Identity.GetUserId() == comment.UserId || User.IsInRole("Administrators"))
 			{
 				return View(comment);
 			}

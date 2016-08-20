@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageBoard", "MessageBoard\MessageBoard.csproj", "{D2D16950-A88F-42E5-903F-25DA98B9714A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageBoard.Web", "MessageBoard\MessageBoard.Web.csproj", "{D2D16950-A88F-42E5-903F-25DA98B9714A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageBoard.Data", "MessageBoard.Data\MessageBoard.Data.csproj", "{7D26A34E-3619-4C37-941F-39B2DC170DE9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{D2D16950-A88F-42E5-903F-25DA98B9714A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D2D16950-A88F-42E5-903F-25DA98B9714A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D2D16950-A88F-42E5-903F-25DA98B9714A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D26A34E-3619-4C37-941F-39B2DC170DE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D26A34E-3619-4C37-941F-39B2DC170DE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D26A34E-3619-4C37-941F-39B2DC170DE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D26A34E-3619-4C37-941F-39B2DC170DE9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
