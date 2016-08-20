@@ -44,6 +44,7 @@
                 @{Html.RenderAction("Sidebar", "Home");}
             </div>
             <div class="col-md-9">
+                @Html.Partial("_Notifications")
                 @RenderBody()
             </div>
             <hr />
