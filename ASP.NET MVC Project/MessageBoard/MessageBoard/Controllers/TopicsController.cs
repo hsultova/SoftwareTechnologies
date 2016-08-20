@@ -9,6 +9,7 @@ using System.Web.Mvc;
 using MessageBoard.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using MessageBoard.Extensions;
 
 namespace MessageBoard.Controllers
 {
@@ -26,15 +27,23 @@ namespace MessageBoard.Controllers
 		// GET: Topics/Details/5
 		public ActionResult Details(int? id)
 		{
+
 			if (id == null)
 			{
 				return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
 			}
 			Topic topic = db.Topics.Include(t => t.User).SingleOrDefault(t => t.Id == id);
+
+			foreach (var comment in topic.Comments)
+			{
+				comment.User = db.Users.FirstOrDefault(u => u.Id == comment.UserId);
+			}
+
 			if (topic == null)
 			{
 				return HttpNotFound();
 			}
+
 			return View(topic);
 		}
 
@@ -43,16 +52,25 @@ namespace MessageBoard.Controllers
 		public ActionResult AddComment(int id, string text)
 		{
 			var topic = db.Topics.SingleOrDefault(t => t.Id == id);
-			var comment = new Comment
-			{
-				Text = text,
-				DateCreated = DateTime.Now,
-				TopicId = id,
-				UserId = User.Identity.GetUserId()
-			};
 
-			db.Comments.Add(comment);
-			db.SaveChanges();
+			if (text != "")
+			{
+				var comment = new Comment
+				{
+					Text = text,
+					DateCreated = DateTime.Now,
+					TopicId = id,
+					UserId = User.Identity.GetUserId(),
+				};
+
+				comment.Topic = topic;
+
+				topic.Comments.Add(comment);
+				db.SaveChanges();
+				this.AddNotification("Comment created.", NotificationType.SUCCESS);
+				return RedirectToAction("Details", "Topics", new { id = topic.Id });
+			}
+			this.AddNotification("Comment text is empty.", NotificationType.ERROR);
 			return RedirectToAction("Details", "Topics", new { id = topic.Id });
 		}
 
@@ -82,6 +100,7 @@ namespace MessageBoard.Controllers
 
 				db.Topics.Add(topic);
 				db.SaveChanges();
+				this.AddNotification("Topic created.", NotificationType.SUCCESS);
 				return RedirectToAction("Index");
 			}
 
@@ -91,7 +110,7 @@ namespace MessageBoard.Controllers
 		}
 
 		// GET: Topics/Edit/5
-		[Authorize]
+		[Authorize(Roles = "Administrators")]
 		public ActionResult Edit(int? id)
 		{
 			if (id == null)
@@ -115,13 +134,14 @@ namespace MessageBoard.Controllers
 		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		[Authorize]
+		[Authorize(Roles = "Administrators")]
 		public ActionResult Edit([Bind(Include = "Id,Title,Content,DateCreated,UserId,CategoryId")] Topic topic)
 		{
 			if (ModelState.IsValid)
 			{
 				db.Entry(topic).State = EntityState.Modified;
 				db.SaveChanges();
+				this.AddNotification("Topic edited.", NotificationType.SUCCESS);
 				return RedirectToAction("Index");
 			}
 			ViewBag.CategoryId = new SelectList(db.Categories, "Id", "Name", topic.CategoryId);
@@ -154,6 +174,7 @@ namespace MessageBoard.Controllers
 			Topic topic = db.Topics.Find(id);
 			db.Topics.Remove(topic);
 			db.SaveChanges();
+			this.AddNotification("Topic deleted.", NotificationType.SUCCESS);
 			return RedirectToAction("Index");
 		}
 
