@@ -10,6 +10,6 @@ namespace MessageBoard.ViewModels
 	{
 		public Pager Pager { get; set; }
 
-		public int TopicId { get; set; }
+		public int? TopicId { get; set; }
 	}
 }
