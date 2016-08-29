@@ -13,7 +13,7 @@ namespace MessageBoard.Controllers
 		private ApplicationDbContext db = new ApplicationDbContext();
 		public ActionResult Index(string search)
 		{
-			var topics = db.Topics.Select(t => t).Include(t => t.Category);
+			var topics = db.Topics.Select(t => t).Include(t => t.Category).Take(10);
 
 			if (!String.IsNullOrEmpty(search))
 			{
