@@ -1,25 +1,43 @@
-﻿@model MessageBoard.Models.Topic
+﻿@using MessageBoard.ViewModels
+@model CommentsOfTopicViewModel
 
 <div class="row h3 page-header">
     <a href="javascript:history.back()" class="col-md-2">
         <span class="glyphicon glyphicon-chevron-left"></span>
     </a>
-    <span class="col-md-10">@Model.Title</span>
+    <span class="col-md-10">@Model.Topic.Title</span>
+</div>
+<div class="container">
+    @Html.DisplayFor(model => model.Topic.Content)
+    <div class="pull-right">
+        @Html.DisplayFor(model => model.Topic.User.FullName)
+        @Html.DisplayFor(model => model.Topic.DateCreated)
+    </div>
+    <hr />
+
+    @if (Model.Pager.CurrentPage == 1)
+    {
+    <div class="col-md-offset-1">
+        <form action="/Topics/AddComment" method="post" class="center">
+            <input type="hidden" name="id" value="@Model.Topic.Id" />
+            <textarea class="form-control" rows="3" type="text" name="text"></textarea> <br />
+            <input type="hidden" name="page" value="@Model.Pager.CurrentPage" />
+            <input class="btn btn-primary" type="submit" value="Add Comment" />
+        </form>
+    </div>
+    }
+
+    <ul>
+        @foreach (var comment in Model.Comments)
+        {
+            <li class="comment">
+                <a href="@Url.Action("Edit", "Comments", new { id=comment.Id})">
+                    @comment.Text <span class="pull-right"><small> @comment.User.FullName</small><small class="date"> @comment.DateCreated</small></span>
+                </a>
+            </li>
+        }
+    </ul>
+    <input type="hidden" name="page" value="@Model.Pager.CurrentPage" />
 </div>
 
-@Html.DisplayFor(model => model.Content)
-@Html.DisplayFor(model => model.User.FullName)
-@Html.DisplayFor(model => model.DateCreated)
-
-<ul>
-    @foreach (var comment in Model.Comments)
-    {
-        <li class="comment"><a href="@Url.Action("Details", "Comments", new { id=comment.Id })"> @comment.Text @*<span> @comment.User.FullName</span>*@<span class="date"> @comment.DateCreated</span></a></li>
-    }
-</ul>
-
-<form action="/Topics/AddComment" method="post">
-    <input type="hidden" name="id" value="@Model.Id" />
-    <input class="form-control input-lg" type="text" name="text" /> <br />
-    <input class="btn btn-primary" type="submit" value="Add Comment" />
-</form>
+@Html.Partial("Pagination", new PagerViewModel() { Pager = Model.Pager, TopicId = Model.Topic.Id})
