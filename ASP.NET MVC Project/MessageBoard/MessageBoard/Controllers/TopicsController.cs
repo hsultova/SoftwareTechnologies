@@ -20,10 +20,17 @@ namespace MessageBoard.Controllers
 		private ApplicationDbContext db = new ApplicationDbContext();
 
 		// GET: Topics
-		public ActionResult Index()
+		public ActionResult Index(int? page)
 		{
 			var topics = db.Topics.OrderByDescending(t => t.DateCreated).Include(t => t.Category).Include(t => t.User);
-			return View(topics.ToList());
+			var pager = new Pager(topics.Count(), page);
+
+			var model = new TopicsViewModel
+			{
+				Topics = topics.Skip((pager.CurrentPage - 1) * pager.PageSize).Take(pager.PageSize),
+				Pager = pager
+			};
+			return View(model);
 		}
 
 		// GET: Topics/Details/5
@@ -44,13 +51,13 @@ namespace MessageBoard.Controllers
 			{
 				return HttpNotFound();
 			}
-
-			var pager = new Pager(topic.Comments.Count(), page);
+			var comments = topic.Comments.OrderByDescending(x => x.DateCreated);
+			var pager = new Pager(comments.Count(), page);
 
 			var model = new CommentsOfTopicViewModel()
 			{
 				Topic = topic,
-				Comments = topic.Comments.Skip((pager.CurrentPage - 1) * pager.PageSize).Take(pager.PageSize),
+				Comments = comments.Skip((pager.CurrentPage - 1) * pager.PageSize).Take(pager.PageSize),
 				Pager = pager
 			};
 
@@ -59,7 +66,7 @@ namespace MessageBoard.Controllers
 
 		[Authorize]
 		[HttpPost]
-		public ActionResult AddComment(int id, string text)
+		public ActionResult AddComment(int id, string text, int? page)
 		{
 			var topic = db.Topics.SingleOrDefault(t => t.Id == id);
 
@@ -78,7 +85,7 @@ namespace MessageBoard.Controllers
 				topic.Comments.Add(comment);
 				db.SaveChanges();
 				this.AddNotification("Comment created.", NotificationType.SUCCESS);
-				return RedirectToAction("Details", "Topics", new { id = topic.Id });
+				return RedirectToAction("Details", "Topics", new { id = topic.Id, page = page });
 			}
 			this.AddNotification("Comment text is empty.", NotificationType.ERROR);
 			return RedirectToAction("Details", "Topics", new { id = topic.Id });
