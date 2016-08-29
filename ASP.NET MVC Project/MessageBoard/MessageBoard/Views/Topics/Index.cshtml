@@ -1,4 +1,5 @@
-﻿@model IEnumerable<MessageBoard.Models.Topic>
+﻿@using MessageBoard.ViewModels
+@model  TopicsViewModel
 
 @{
     ViewBag.Title = "Index";
@@ -16,23 +17,15 @@
 
 <table class="table-condensed table-hover">
 
-    @foreach (var item in Model)
+    @foreach (var item in Model.Topics)
     {
         <tr class="row">
             <th class="col-md-2">
-                @Html.DisplayFor(modelItem => item.Category.Name)
+                <span> @item.Category.Name <br /> @item.Title </span>
             </th>
-            <td class="col-md-2">
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td class="col-md-3">
-                @Html.DisplayFor(modelItem => item.Content)
-            </td>
-            <td class="col-md-2">
-                @Html.DisplayFor(modelItem => item.User.FullName)
-            </td>
-            <td class="col-md-2">
-                @Html.DisplayFor(modelItem => item.DateCreated)
+            <td class="col-md-9">
+                @Html.DisplayFor(modelItem => item.Content)<br />
+                <small class="pull-right"> @item.User.FullName <br /> @item.DateCreated </small>
             </td>
             <td class="col-md-1">
                 <a href="@Url.Action("Details", "Topics", new { id = item.Id })">
@@ -51,4 +44,6 @@
         </tr>
     }
 </table>
+
+@Html.Partial("Pagination", new PagerViewModel() { Pager = Model.Pager })
 
