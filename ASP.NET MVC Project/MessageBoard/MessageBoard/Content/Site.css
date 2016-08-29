@@ -35,33 +35,91 @@ textarea {
 }
 
 .comment {
-    background-color: lightgray;
-    margin: 10px 10px;
-    padding: 10px;
+    background-color: rgba(221,221,221,0.3);
+    border-radius: 10px;
+    margin: 30px 10px;
+    padding: 20px;
+    text-align: justify;
+    border-bottom: 1px dotted #ccc;
+}
+
+ul .comment a {
+    color: black;
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.comment a:link {
+    text-decoration: none;
+}
+
+.date {
+    font-style: italic;
+    font-size: 9pt;
 }
 
 @media (min-width: 768px) {
     .sidebar-nav .navbar .navbar-collapse {
-        padding: 0;
         max-height: none;
         text-decoration: none;
     }
 
-    .sidebar-nav .navbar ul {
-        float: none;
-        display: block;
-        text-decoration: none;
+    .sidebar-nav {
+        width: 200px;
+        margin: 0 auto;
     }
 
-    .sidebar-nav .navbar li {
-        float: none;
-        display: block;
-    }
+        .sidebar-nav .navbar ul {
+            float: none;
+            display: block;
+            text-decoration: none;
+            padding-left: 0;
+        }
 
-        .sidebar-nav .navbar li a {
-            padding-top: 12px;
-            padding-bottom: 12px;
+        .sidebar-nav .navbar li {
+            float: none;
+            display: block;
+            padding-top: 5px;
+            padding-bottom: 0;
+            margin: 20px;
+            font-weight: bold;
+            font-size: 18px;
         }
 }
 
+/*Override bootstrap*/
 
+a {
+    color: #000000;
+    text-decoration: none;
+}
+
+    a:hover, a:focus {
+        color: #325e84;
+        text-decoration: none;
+    }
+
+.navbar-inverse {
+    background-color: #325e84;
+    border-color: #082e4e;
+}
+
+    .navbar-inverse .navbar-nav > li > a {
+        color: #efeaea;
+    }
+
+        .navbar-inverse .navbar-nav > li > a:hover {
+            background-color: #4174a0;
+            border-radius: 5px;
+        }
+
+    .navbar-inverse .navbar-brand {
+        color: #ffffff;
+    }
+
+.badge {
+    background-color: #428bca;
+}
