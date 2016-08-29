@@ -17,7 +17,9 @@
         <div class="list-group">
             @foreach (var item in Model)
             {
-                <a href="@Url.Action("Details", "Topics", new { id=item.Id })" class="list-group-item">@Html.DisplayFor(modelItem => item.Category.Name): @Html.DisplayFor(modelItem => item.Title)</a> @*- @Html.DisplayFor(modelItem => item.Content) </a>        <small><a href="#" id="readMore">Show Less</a></small>*@}
+                @*<a href="@Url.Action("Details", "Topics", new { id=item.Id })" class="list-group-item">@Html.DisplayFor(modelItem => item.Category.Name): @Html.DisplayFor(modelItem => item.Title)<span class="badge">@item.Comments.Count</span></a>*@ @*- @Html.DisplayFor(modelItem => item.Content) </a>        <small><a href="#" id="readMore">Show Less</a></small>*@
+            <a href="@Url.Action("Details", "Topics", new { id = item.Id })" class="list-group-item">@item.Category.Name: @item.Title<span class="badge">@item.Comments.Count</span></a>
+            }
         </div>
     </div>
     <div class="col-md-4">
