@@ -10,6 +10,8 @@ using MessageBoard.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using MessageBoard.Extensions;
+using MessageBoard.ViewModels;
+using MessageBoard.Helpers;
 
 namespace MessageBoard.Controllers
 {
@@ -25,9 +27,8 @@ namespace MessageBoard.Controllers
 		}
 
 		// GET: Topics/Details/5
-		public ActionResult Details(int? id)
+		public ActionResult Details(int? id, int? page)
 		{
-
 			if (id == null)
 			{
 				return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -44,7 +45,16 @@ namespace MessageBoard.Controllers
 				return HttpNotFound();
 			}
 
-			return View(topic);
+			var pager = new Pager(topic.Comments.Count(), page);
+
+			var model = new CommentsOfTopicViewModel()
+			{
+				Topic = topic,
+				Comments = topic.Comments.Skip((pager.CurrentPage - 1) * pager.PageSize).Take(pager.PageSize),
+				Pager = pager
+			};
+
+			return View(model);
 		}
 
 		[Authorize]

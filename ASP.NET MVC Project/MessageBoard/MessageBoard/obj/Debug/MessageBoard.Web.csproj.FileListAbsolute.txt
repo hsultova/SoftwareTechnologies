@@ -33,6 +33,8 @@ D:\Projects\SoftwareTechnologies\ASP.NET MVC Project\MessageBoard\MessageBoard\b
 D:\Projects\SoftwareTechnologies\ASP.NET MVC Project\MessageBoard\MessageBoard\bin\Microsoft.Web.Infrastructure.dll
 D:\Projects\SoftwareTechnologies\ASP.NET MVC Project\MessageBoard\MessageBoard\bin\Newtonsoft.Json.dll
 D:\Projects\SoftwareTechnologies\ASP.NET MVC Project\MessageBoard\MessageBoard\bin\Owin.dll
+D:\Projects\SoftwareTechnologies\ASP.NET MVC Project\MessageBoard\MessageBoard\bin\PagedList.dll
+D:\Projects\SoftwareTechnologies\ASP.NET MVC Project\MessageBoard\MessageBoard\bin\PagedList.Mvc.dll
 D:\Projects\SoftwareTechnologies\ASP.NET MVC Project\MessageBoard\MessageBoard\bin\System.Web.Helpers.dll
 D:\Projects\SoftwareTechnologies\ASP.NET MVC Project\MessageBoard\MessageBoard\bin\System.Web.Mvc.dll
 D:\Projects\SoftwareTechnologies\ASP.NET MVC Project\MessageBoard\MessageBoard\bin\System.Web.Optimization.dll
@@ -43,6 +45,8 @@ D:\Projects\SoftwareTechnologies\ASP.NET MVC Project\MessageBoard\MessageBoard\b
 D:\Projects\SoftwareTechnologies\ASP.NET MVC Project\MessageBoard\MessageBoard\bin\WebGrease.dll
 D:\Projects\SoftwareTechnologies\ASP.NET MVC Project\MessageBoard\MessageBoard\bin\MessageBoard.Data.pdb
 D:\Projects\SoftwareTechnologies\ASP.NET MVC Project\MessageBoard\MessageBoard\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Projects\SoftwareTechnologies\ASP.NET MVC Project\MessageBoard\MessageBoard\bin\PagedList.xml
+D:\Projects\SoftwareTechnologies\ASP.NET MVC Project\MessageBoard\MessageBoard\bin\PagedList.Mvc.xml
 D:\Projects\SoftwareTechnologies\ASP.NET MVC Project\MessageBoard\MessageBoard\bin\System.Web.Helpers.xml
 D:\Projects\SoftwareTechnologies\ASP.NET MVC Project\MessageBoard\MessageBoard\bin\System.Web.Mvc.xml
 D:\Projects\SoftwareTechnologies\ASP.NET MVC Project\MessageBoard\MessageBoard\bin\System.Web.Optimization.xml
