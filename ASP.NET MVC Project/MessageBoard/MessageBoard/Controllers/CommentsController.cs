@@ -20,7 +20,6 @@ namespace MessageBoard.Controllers
 		// GET: Comments/Edit/5
 		public ActionResult Edit(int? id)
 		{
-
 			if (id == null)
 			{
 				return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -63,6 +62,7 @@ namespace MessageBoard.Controllers
 		}
 
 		// GET: Comments/Delete/5
+		[Authorize(Roles = "Administrators")]
 		public ActionResult Delete(int? id)
 		{
 			if (id == null)
@@ -70,6 +70,10 @@ namespace MessageBoard.Controllers
 				return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
 			}
 			Comment comment = db.Comments.Find(id);
+
+			comment.User = db.Users.Where(x => x.Id == comment.UserId).FirstOrDefault();
+			comment.Topic = db.Topics.Where(x => x.Id == comment.TopicId).FirstOrDefault();
+
 			if (comment == null)
 			{
 				return HttpNotFound();
@@ -86,9 +90,8 @@ namespace MessageBoard.Controllers
 			db.Comments.Remove(comment);
 			db.SaveChanges();
 			this.AddNotification("Comment deleted.", NotificationType.SUCCESS);
-			return RedirectToAction("Index");
+			return RedirectToAction("Details", "Topics", new { id = comment.TopicId });
 		}
-
 		protected override void Dispose(bool disposing)
 		{
 			if (disposing)
