@@ -15,13 +15,24 @@
 
 @if (User.IsInRole("Administrators"))
 {
-    <a href="@Url.Action("Edit", "Categories")">
-        <span class="glyphicon glyphicon-edit"></span>
+    <a href="@Url.Action("Edit", "Categories", new { id = Model.Id })">
+    <span class="glyphicon glyphicon-edit"></span>
     </a>
 }
 
 
 <hr />
+
+<div>
+    @if (User.Identity.IsAuthenticated)
+    {
+        <a href="@Url.Action("Create", "Topics")">
+            <span class="btn btn-primary"><span class="glyphicon glyphicon-plus-sign"></span> Add New Topic</span>
+        </a>
+    }
+</div>
+
+
 
 <table class="table-condensed table-hover">
 
